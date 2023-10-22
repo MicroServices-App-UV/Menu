@@ -14,7 +14,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import Image from 'next/image'
 import Burguer from '../sidebar/page'
+import { Divider } from '@mui/material';
 
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -54,6 +56,7 @@ import Burguer from '../sidebar/page'
       [theme.breakpoints.up('md')]: {
         width: '44ch',
       },
+      
     },
   }));
   
@@ -77,20 +80,30 @@ const page = () => {
     return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar color="" position="fixed">
-          <Toolbar>
+          <Toolbar >
 
             <Burguer />
-            
+
+            <Image
+              src="/Images/logo.png"
+              width={60}
+              height={52}
+            />
+
             <Typography
               variant="h6"
               noWrap
+              fontWeight="bold"
               component="div"
-              sx={{ display: { xs: 'none', sm: 'block' } }}
+              sx={{ display: { xs: 'none', sm: 'block' }, paddingRight: 1 }}
             >
               Thunder Foods
             </Typography>
 
-            <Search>
+            <Divider orientation='vertical' flexItem variant='middle' />
+
+            <Box sx={{ flexGrow: 1 }} />
+            <Search >
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -99,9 +112,11 @@ const page = () => {
                 inputProps={{ 'aria-label': 'search' }}
               />
             </Search>
-
+           
+           
             <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Divider orientation='vertical' flexItem variant='middle' />
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, paddingLeft: 1}}>
               <IconButton
                 size="large"
                 edge="end"
