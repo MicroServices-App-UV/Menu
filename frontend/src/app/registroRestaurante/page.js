@@ -37,7 +37,7 @@ function page(props) {
             <Grid container spacing={2} alignItems='center' justifyContent='center'>
               <Grid item xs={2}>
                 <Image
-                  src="/Images/logo.png"
+                  src="/Images/logoyellow.png"
                   width={60}
                   height={52}
                 />

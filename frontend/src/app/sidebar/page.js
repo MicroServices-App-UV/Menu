@@ -106,7 +106,7 @@ const page = () => {
 
          
           <Image
-              src="/Images/logo.png"
+              src="/Images/logoyellow.png"
               width={60}
               height={52}
             />

@@ -79,7 +79,7 @@ const page = () => {
   
     return (
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar color="" position="fixed">
+        <AppBar sx={{backgroundColor: '#FBB500'}} position="fixed">
           <Toolbar >
 
             <Burguer />
