@@ -83,14 +83,14 @@ const StyleDragArea = styled.div`
     position: relative;
     height: 90px;
     width: 180px;
-    border: 4px solid #d0d7de;
+    border: 4px solid #FFE297;
     margin-left: 10px;
     margin-right: 10px;
   }
 
   .image-upload-wrap:hover {
     background-color: transparent;
-    border: 4px dashed #d0d7de;
+    border: 4px dashed #FFE297;
   }
   .text-information {
     margin-top: 15px;

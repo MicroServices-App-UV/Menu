@@ -22,7 +22,7 @@ const page = () => {
 
   const drawer = (
     <div>
-      <Divider variant='middle'/>
+      
 
       <ListItem disablePadding>
         <ListItemButton>
@@ -74,6 +74,8 @@ const page = () => {
   
   return (
     <div>
+      
+
       {/* Ícono del menú hamburugesa */}
       <IconButton
         size="large"
@@ -93,20 +95,20 @@ const page = () => {
       > 
 
        
-       <Toolbar>
+       <Toolbar sx={{backgroundColor:'#FBB500'}}>
          <IconButton
            size="large"
            edge="start"
            color="inherit"
            onClick={() => setDrawerOpen(false)}
-           sx={{ mr: 2}}
+           sx={{ mr: 2, color:'white'}}
          >
              <MenuIcon />
          </IconButton>
 
          
           <Image
-              src="/Images/logoyellow.png"
+              src="/Images/logo.png"
               width={60}
               height={52}
             />
@@ -115,7 +117,7 @@ const page = () => {
             component='div' 
             noWrap
             fontWeight="bold"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            sx={{ display: { xs: 'none', sm: 'block' }, color:'white' }}
           >
             Thunder Foods
           </Typography>

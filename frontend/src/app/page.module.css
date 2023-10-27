@@ -15,9 +15,12 @@
 }
 
 /* Cambiar el color de la pista del scrollbar */
-
+/* .muiStack::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+} */
 
 /* Cambiar el color del thumb del scrollbar */
 .muiStack::-webkit-scrollbar-thumb {
-  background-color: #FBB500;
+  background-color: #e4e4e4;
+  border-radius: 10px;
 }
