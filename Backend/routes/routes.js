@@ -1,5 +1,5 @@
 const express = require("express");
-const { userInfo } = require('../controllers/graphqlService.js')
+const { userInfo, mealInfo } = require('../controllers/graphqlService.js')
 
 const { registerRestaurant, getRestaurants } = require('../controllers/controllers.js')
 const router = express.Router();
@@ -10,4 +10,5 @@ router.get('/restaurantes', getRestaurants )
 
 router.get('/user/:id', userInfo)
 
+router.get('/mealsinfo', mealInfo)
 module.exports = router;

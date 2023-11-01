@@ -1,9 +1,8 @@
 const { request } = require("graphql-request");
 
 const userInfo = async (req, res, next) => {
-    console.log('Soy el req', req.params.id)
+  console.log("Soy el req", req.params.id);
   try {
-    
     const query = `
       query GetUser($id: String!) {
         users(id: $id) {
@@ -25,10 +24,43 @@ const userInfo = async (req, res, next) => {
     const data = await request(endpoint, query, variables);
 
     console.log("Usuario obtenido: ", data.users);
-    res.json(data.users)
+    res.json(data.users);
   } catch (error) {
     console.error(error);
   }
 };
 
-module.exports = { userInfo };
+const mealInfo = (req, res) => {
+
+  const { product_id, user_id, name, count, price } = req.query;
+  const countInt = parseInt(count, 10)
+  const priceInt = parseInt(price, 10)
+  const query = `
+  mutation SendMeal($input: mealInput) {
+    sendMeal(input: $input) {
+      product_id
+    }
+  }
+`;
+  const variables = {
+    input: {
+      product_id,
+      user_id,
+      name,
+      count: countInt,
+      price: priceInt,
+    }
+  };
+
+  const endpoint = "http://localhost:3000/graphql";
+
+  request(endpoint, query, variables)
+    .then((data) => {
+      res.send("Mutación exitosa");
+    })
+    .catch((error) => {
+      res.status(500).send("Error en la mutación: " + error);
+    });
+};
+
+module.exports = { userInfo, mealInfo };
