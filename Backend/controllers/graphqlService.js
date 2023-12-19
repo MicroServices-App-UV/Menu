@@ -1,4 +1,5 @@
 const { request } = require("graphql-request");
+const {setCachedUserId} = require("../cache")
 
 const userInfo = async (req, res, next) => {
   console.log("Soy el req", req.params.id);
@@ -22,6 +23,9 @@ const userInfo = async (req, res, next) => {
     const endpoint = "http://localhost:3000/graphql";
 
     const data = await request(endpoint, query, variables);
+
+    const idd = data.users._id
+    setCachedUserId(data.users)
 
     console.log("Usuario obtenido: ", data.users);
     res.json(data.users);

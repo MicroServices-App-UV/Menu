@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const rutas = require("./routes/routes.js");
 const mongoose = require("mongoose");
@@ -10,22 +9,22 @@ const app = express();
 const port = 3333;
 
 // Configuración de Winston
-const logger = winston.createLogger({
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.Http({
-      host: "logstash",
-      port: 9600, // Puerto de Logstash
-      path: "/", // Ruta de entrada de Logstash
-      ssl: false,
-    }),
-  ],
-});
+// const logger = winston.createLogger({
+//   transports: [
+//     new winston.transports.Console(),
+//     new winston.transports.Http({
+//       host: "logstash",
+//       port: 9600, // Puerto de Logstash
+//       path: "/", // Ruta de entrada de Logstash
+//       ssl: false,
+//     }),
+//   ],
+// });
 
-app.use((req, res, next) => {
-  logger.info(`${req.method} ${req.url}`);
-  next();
-});
+// app.use((req, res, next) => {
+//   logger.info(`${req.method} ${req.url}`);
+//   next();
+// });
 
 app.use(express.json());
 
