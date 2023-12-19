@@ -25,7 +25,7 @@ const page = () => {
       
 
       <ListItem disablePadding>
-        <ListItemButton onClick={() => window.location.href = 'http://localhost:3000/'}>
+        <ListItemButton onClick={() => window.location.href = 'http://20.83.137.142/'}>
           <ListItemIcon>
             <AccountCircleOutlinedIcon fontSize='large'/>
           </ListItemIcon>
